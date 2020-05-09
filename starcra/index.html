@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starcraft</title>
+</head>
+<body>
+    <img id="cloacking" src="cloaking.png" alt="cloacking">
+    <img id="wraith" src="wraith.png" alt="wraith">
+    <script
+        src="https://code.jquery.com/jquery-3.5.0.js"
+        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+        crossorigin="anonymous">
+    </script>
+  <script>
+      $(document).ready(function(){
+        $("#cloacking").click(function(){
+            $("#wraith").toggle();
+        });
+     });
+  </script>
+</body>
+</html>
