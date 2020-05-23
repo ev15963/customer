@@ -14,4 +14,5 @@ var add = (first, second) => {
   return first + second;
 };
 console.log(add(1, 2));
-깃허브가 어디있죠 
+//깃허브가 어디있죠
+//여깄습니다.
