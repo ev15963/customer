@@ -1,11 +1,17 @@
-const obj = {
-  a: 1,
-  b: 2,
-};
-// obj.a =3;
-const obj2 = {
-  ...obj,
-  a: 3,
-};
+function add(first, second) {
+  return first + second;
+}
+console.log(add);
 
-console.log(obj2, obj);
+//typeof add === 'function'
+var add = function (first, second) {
+  return first + second;
+};
+//typeof add === 'function'
+console.log(add);
+
+var add = (first, second) => {
+  return first + second;
+};
+console.log(add(1, 2));
+깃허브가 어디있죠 
