@@ -4,15 +4,15 @@ function add(first, second) {
 console.log(add);
 
 //typeof add === 'function'
-var add = function (first, second) {
+var add2 = function (first, second) {
   return first + second;
 };
 //typeof add === 'function'
-console.log(add);
+console.log(add2);
 
-var add = (first, second) => {
+var add3 = (first, second) => {
   return first + second;
 };
-console.log(add(1, 2));
+console.log(add3(1, 2));
 //깃허브가 어디있죠
 //여깄습니다.
