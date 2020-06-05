@@ -21,6 +21,23 @@ const styles = (theme) => ({
   },
 });
 
+class App extends Component {
+  state = {
+    customers: "",
+  };
+
+  componentDidMount() {
+    this.callApi()
+      .then((res) => this.setState({ customers: res }))
+      .catch((err) => console.log(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch("/api/customers");
+    const body = await response.json();
+    return body;
+  };
+  /*
 const customers = [
   {
     id: 1,
@@ -48,9 +65,8 @@ const customers = [
     gender: "남자",
     job: "대학생",
   },
-];
+];*/
 
-class App extends Component {
   render() {
     const { classes } = this.props;
     return (
@@ -67,20 +83,30 @@ class App extends Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {
-              customers.map((c) => {
-                return (
-                  <Customer
-                    id={c.id}
-                    image={c.image}
-                    name={c.name}
-                    birthday={c.birthday}
-                    gender={c.gender}
-                    job={c.job}
-                  />
-                );
-              })
-              /* <Customer
+            {this.state.customers
+              ? this.state.customers.map((c) => {
+                  return (
+                    <Customer
+                      id={c.id}
+                      image={c.image}
+                      name={c.name}
+                      birthday={c.birthday}
+                      gender={c.gender}
+                      job={c.job}
+                    />
+                  );
+                })
+              : ""}
+            }
+          </TableBody>
+        </Table>
+      </Paper>
+    );
+  }
+}
+
+/*
+                <Customer
                   id={customers[0].id}
                   image={customers[0].image}
                   name={customers[0].name}
@@ -105,14 +131,8 @@ class App extends Component {
                   birthday={customers[2].birthday}
                   gender={customers[2].gender}
                   job={customers[2].job}
-                /> */
-            }
-          </TableBody>
-        </Table>
-      </Paper>
-    );
-  }
-}
+                /> 
+                */
 // function App() {
 //   return (
 //     <div className="App">
