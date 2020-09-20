@@ -12,3 +12,5 @@ function parse(qs) {
 }
 
 parse('banana=10&apple=20&orange=30');
+
+//추가

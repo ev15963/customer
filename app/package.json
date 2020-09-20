@@ -1,21 +1,28 @@
 {
   "name": "app",
   "version": "0.1.0",
+  "author": "ssaunier",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
     "axios": "0.18.1",
+    "body-parser": "^1.19.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16.3": "^1.4.1",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^21.1.0",
     "moment": "^2.24.0",
     "next": "^9.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-redux": "^6.0.0",
     "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.4.1",
     "react-test-render": "^16.7.0",
     "react-with-styles": "^3.2.1",
     "recompose": "^0.30.0",
@@ -23,13 +30,16 @@
     "redux-pack": "^0.1.5",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "selector-action": "^1.1.1"
+    "selector-action": "^1.1.1",
+    "shallow-equal": "^1.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "storybook": "start-storybook -p 9001 -c .stroybook",
+    "start": "webpack-dev-server --mode development",
+    "build": "babel src -d lib",
+    "test": "(eslint lib || true) && jest",
+    "eject": "react-scripts eject",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,5 +70,14 @@
     "redux-devtools-extension": "^2.13.8",
     "sass-loader": "^7.1.0",
     "storybook-addon-jsx": "^7.1.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "@storybook/react-native-server": "^5.3.19",
+    "babel-loader": "^8.1.0"
   }
 }

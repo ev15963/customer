@@ -1,4 +1,4 @@
-function debounce(func, delay) {
+export function debounce(func, delay) {
   let inDebounce;
   return function (...args) {
     if (inDebounce) {
